@@ -26,6 +26,8 @@ char *line;
 int status;
 } term_t;
 
+extern char **environ;
+
 char **cmd_args(char *arg, const char *delim);
 char **__realloc(char **args, size_t n);
 int cmd_sys(term_t term);

@@ -9,14 +9,14 @@ char *search_path(void)
 {
 char *path = "PATH=";
 int i;
-for (i = 0; __environ[i] != NULL; i++)
+for (i = 0; environ[i] != NULL; i++)
 {
-if (strstr(__environ[i], path) == __environ[i])
+if (strstr(environ[i], path) == environ[i])
 {
 break;
 }
 }
-return (__environ[i]);
+return (environ[i]);
 }
 
 /**
