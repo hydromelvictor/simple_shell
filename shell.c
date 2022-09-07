@@ -12,6 +12,7 @@ int main(void)
     {
         printf("$ ");
     }
+    term.envp = environ;
     while (getline(&term.line, &n, stdin) != EOF)
     {
         term.argv = cmd_args(term.line, " \t\r\n\a");
