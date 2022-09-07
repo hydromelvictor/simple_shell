@@ -2,7 +2,7 @@
 /**
 * search_path - search the path in environment
 *
-* @envp: parameter
+* @void: parameter
 * Return: char*
 */
 char *search_path(void)
