@@ -18,7 +18,7 @@ int cmd_sys(term_t term)
 
     if (id == 0)
     {
-        term.cmd = term.argv[0];
+        term.cmd = search_cmd_path(term);
 
         if (execve(term.cmd, term.argv, term.envp) == -1)
         {
