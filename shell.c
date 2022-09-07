@@ -21,5 +21,9 @@ int main(void)
             printf("$ ");
         }
     }
+    free(term.argv);
+    free(term.cmd);
+    free(term.envp);
+    free(term.line);
     return (0);
 }
