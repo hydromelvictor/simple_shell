@@ -45,19 +45,20 @@ else
 {
 path = strdup(search_path() + 5);
 path_tab = cmd_args(path, ":");
-
 while (path_tab[i] != NULL)
 {
 term.cmd = strcat(path_tab[i], "/");
 term.cmd = strcat(term.cmd, term.argv[0]);
-
 if (exec_permission(term.cmd) == 0)
 {
+free(path);
+free(path_tab);
 return (term.cmd);
-break;
 }
 i++;
 }
+free(path);
+free(path_tab);
 }
 return (NULL);
 }
