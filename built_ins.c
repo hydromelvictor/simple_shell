@@ -14,7 +14,7 @@ if (strcmp(term.argv[0], "cd") == 0)
 {
     pwd = "PWD=";
     if (term.argv[1] != NULL)
-    {
+    {   
         if (term.argv[1][0] == '$')
         {
             str = malloc(strlen(term.argv[1]) * sizeof(char) - 1);
