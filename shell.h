@@ -46,4 +46,5 @@ int _chdir(term_t term);
 
 char *_strdup(const char *src);
 char *_strcat(char *dest, char *src);
+void cmd_pwd(char *pwd);
 #endif
