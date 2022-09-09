@@ -24,15 +24,15 @@ int main(void)
                 exit(term.status);
             }
             free(term.argv);
+            free(term.cmd);
         }
         if (hub == 0)
         {
             printf("$ ");
         }
+        free(term.cmd_lines);
     }
-    free(term.cmd);
-    free(term.envp);
     free(term.line);
-    free(term.cmd_lines);
+    free(term.envp);
     exit(term.status);
 }
