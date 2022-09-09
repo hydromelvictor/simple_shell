@@ -12,52 +12,84 @@ struct  stat buf;
 char *str, *pwd;
 if (strcmp(term.argv[0], "cd") == 0)
 {
-    pwd = "PWD=";
-    if (term.argv[1] != NULL)
-    {   
-        if (term.argv[1][0] == '$')
-        {
-            str = malloc(strlen(term.argv[1]) * sizeof(char) - 1);
-            str = term.argv[1] + 1;
-            term.argv[1] = _getenv(str);
-        }
-        if (stat(term.argv[1], &buf) == 0)
-        {
-            pwd = _strcat(pwd, term.argv[1]);
-            pwd = strcat(pwd, "\0");
-            cmd_pwd(pwd);
-            return (chdir(term.argv[1]));
-        }
-        else
-        {
-            perror("./hsh");
-            return (-1);
-        }
-    }
-    pwd = _strcat(pwd, _getenv("HOME"));
-    cmd_pwd(pwd);
-    return (chdir(_getenv("HOME")));
+pwd = "PWD=";
+if (term.argv[1] != NULL)
+{
+if (term.argv[1][0] == '$')
+{
+str = malloc(strlen(term.argv[1]) * sizeof(char) - 1);
+str = term.argv[1] + 1;
+term.argv[1] = _getenv(str);
+}
+if (stat(term.argv[1], &buf) == 0)
+{
+pwd = _strcat(pwd, term.argv[1]);
+pwd = strcat(pwd, "\0");
+cmd_pwd(pwd);
+return (chdir(term.argv[1]));
+}
+else
+{
+perror("./hsh");
+return (-1);
+}
+}
+pwd = _strcat(pwd, _getenv("HOME"));
+cmd_pwd(pwd);
+return (chdir(_getenv("HOME")));
 }
 return (-1);
 }
 
+/**
+ * cmd_pwd - path for pwd
+ *
+ * @pwd: parameter
+ */
 void cmd_pwd(char *pwd)
 {
-    size_t i, j;
-    char *str = "PWD=";
-    for (i = 0; environ[i] != NULL; i++)
-    {
-        for (j = 0; j < 4; j++)
-        {
-            if (environ[i][j] != str[j])
-            {
-                break;
-            }
-        }
-        if (j == 4)
-        {
-            environ[i] = pwd;
-            return;
-        }
-    }
+size_t i, j;
+char *str = "PWD=";
+for (i = 0; environ[i] != NULL; i++)
+{
+for (j = 0; j < 4; j++)
+{
+if (environ[i][j] != str[j])
+{
+break;
+}
+}
+if (j == 4)
+{
+environ[i] = pwd;
+return;
+}
+}
+}
+
+/**
+ * cmd_name - name
+ *
+ * @pwd: parameter
+ * @name: parameter
+ */
+void cmd_name(char *pwd, char *name)
+{
+size_t i, j;
+char *str = _strcat(name, "=");
+for (i = 0; environ[i] != NULL; i++)
+{
+for (j = 0; j < strlen(str); j++)
+{
+if (environ[i][j] != str[j])
+{
+break;
+}
+}
+if (j == strlen(str))
+{
+environ[i] = pwd;
+return;
+}
+}
 }

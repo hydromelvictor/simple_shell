@@ -5,10 +5,10 @@
  * @term: parameter
  * Return: int
  */
-int cmd_run (term_t term)
+int cmd_run(term_t term)
 {
 pid_t id;
-    
+
 id  = fork();
 if (id == -1)
 {

@@ -2,7 +2,7 @@
 /**
  * _strdup - copy
  *
- * @param src: parameter
+ * @src: parameter
  * Return: char*
  */
 char *_strdup(const char *src)
@@ -25,6 +25,13 @@ return (dest);
 return (NULL);
 }
 
+/**
+ * _strcat - concatenation
+ *
+ * @dest: parameter
+ * @src: parameter
+ * Return: char*
+ */
 char *_strcat(char *dest, char *src)
 {
 size_t i, j, k, l;

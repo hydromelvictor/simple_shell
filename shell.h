@@ -33,7 +33,7 @@ extern char **environ;
 char **cmd_args(char *arg, const char *delim);
 char **__realloc(char **args, size_t n);
 int cmd_sys(term_t term);
-int cmd_run (term_t term);
+int cmd_run(term_t term);
 char **cmd_line_args(char *line);
 
 char *search_path(void);
@@ -50,4 +50,6 @@ int _chdir(term_t term);
 char *_strdup(const char *src);
 char *_strcat(char *dest, char *src);
 void cmd_pwd(char *pwd);
+
+void cmd_name(char *pwd, char *name);
 #endif
