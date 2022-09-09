@@ -14,7 +14,13 @@ $ git clone https://github.com/harkinder-dark/simple_shell.git
 Next you can compile the files with this command:
 
 $ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
-```
+
 finally you can run our Shell writing:
 
 ./hsh
+
+### Files
+| File Name | Description |
+| ------ | ------ |
+built_in.c | Handle built-ins |
+built_ins.c | Handle all built-ins, handle changing directory and finding path |
