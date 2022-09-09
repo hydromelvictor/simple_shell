@@ -48,11 +48,11 @@ if (term.argv[1] != NULL && term.argv[2] != NULL)
 str = _getenv(term.argv[1]);
 if (str == NULL)
 {
+for (i = 0; environ[i] != NULL; i++)
+;
 str = _strcat(_strdup(term.argv[1]), "=");
 str = _strcat(environ[i], _strdup(term.argv[2]));
 str = strcat(environ[i], "\0");
-for (i = 0; environ[i] != NULL; i++)
-;
 environ[i] = _strdup(str);
 }
 else
@@ -64,7 +64,7 @@ if (str[i] == '=')
 break;
 }
 }
-cmd_name(strup(term.argv[2]), strdup(term.argv[1]));
+cmd_name(strdup(term.argv[2]), strdup(term.argv[1]));
 return (0);
 }
 }
