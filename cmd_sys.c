@@ -7,27 +7,28 @@
  */
 int cmd_sys(term_t term)
 {
-    pid_t id;
-
-    id  = fork();
-    if (id == -1)
+    /*size_t i;*/
+    char *var[] = {"exit", "setenv", "unsetenv", "cd", "env", NULL};
+    int (*func[])(term_t) = {cmd_exit, _setenv, _unsetenv, _chdir, cmd_env, cmd_run};
+    if (strcmp(term.argv[0], var[0]) == 0)
     {
-        perror("./hsh");
-        return (-1);
+        return((*func[0])(term));
     }
-
-    if (id == 0)
+    if (strcmp(term.argv[0], var[1]) == 0)
     {
-        term.cmd = search_cmd_path(term);
-
-        if (execve(term.cmd, term.argv, term.envp) == -1)
-        {
-            perror("./hsh");
-        }
+        return((*func[1])(term));
     }
-    else
+    if (strcmp(term.argv[0], var[2]) == 0)
     {
-        wait(&term.status);
+        return((*func[2])(term));
     }
-    return (0);
+    if (strcmp(term.argv[0], var[3]) == 0)
+    {
+        return ((*func[3])(term));
+    }
+    if (strcmp(term.argv[0], var[4]) == 0)
+    {
+        return ((*func[4])(term));
+    }
+    return ((*func[5])(term));
 }

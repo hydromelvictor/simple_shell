@@ -16,7 +16,10 @@ int main(void)
     while (getline(&term.line, &n, stdin) != EOF)
     {
         term.argv = cmd_args(term.line, " \t\r\n\a");
-        term.status = cmd_sys(term);
+        if (cmd_sys(term) == 400)
+        {
+            exit(term.status);
+        }
         if (hub == 0)
         {
             printf("$ ");
@@ -26,5 +29,5 @@ int main(void)
     free(term.cmd);
     free(term.envp);
     free(term.line);
-    return (0);
+    exit(term.status);
 }
