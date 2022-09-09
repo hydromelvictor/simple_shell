@@ -22,8 +22,8 @@ int main(void)
             if (cmd_sys(term) == 400)
             {
                 free(term.line);
-                free(term.envp);
                 free(term.cmd_lines);
+                free(term.envp);
                 free(term.argv);
                 free(term.cmd);
                 exit(term.status);
@@ -38,9 +38,6 @@ int main(void)
         free(term.cmd_lines);
     }
     free(term.line);
-    free(term.cmd_lines);
-    free(term.argv);
-    free(term.cmd);
     free(term.envp);
     exit(term.status);
 }
