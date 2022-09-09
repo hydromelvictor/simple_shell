@@ -35,9 +35,10 @@ int main(void)
         {
             printf("$ ");
         }
-        free(term.cmd_lines);
+        
     }
     free(term.line);
+    free(term.cmd_lines);
     free(term.envp);
     exit(term.status);
 }
