@@ -10,4 +10,11 @@ ___
 You can install the simple shell cloning this repo:
 
 $ git clone https://github.com/harkinder-dark/simple_shell.git
+
+Next you can compile the files with this command:
+
+$ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 ```
+finally you can run our Shell writing:
+
+./hsh
