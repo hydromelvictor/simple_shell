@@ -15,6 +15,7 @@
  * @envp: environment vars
  * @cmd: command for shell
  * @line: comand line
+ * @cmd_lines: argument for line cmd
  * @status: command status
  */
 typedef struct shell

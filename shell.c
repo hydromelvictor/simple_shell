@@ -23,13 +23,13 @@ int main(void)
             {
                 exit(term.status);
             }
+            free(term.argv);
         }
         if (hub == 0)
         {
             printf("$ ");
         }
     }
-    free(term.argv);
     free(term.cmd);
     free(term.envp);
     free(term.line);

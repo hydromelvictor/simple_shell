@@ -6,11 +6,11 @@
  */
 int cmd_exit(term_t term)
 {
-    if (term.argv[1] != NULL)
-    {
-        term.status = atoi(term.argv[1]);
-    }
-    return (400);
+if (term.argv[1] != NULL)
+{
+term.status = atoi(term.argv[1]);
+}
+return (400);
 }
 
 /**
@@ -19,16 +19,16 @@ int cmd_exit(term_t term)
  */
 int cmd_env(term_t term)
 {
-    size_t i;
-    if (strcmp(term.argv[0], "env") == 0)
-    {
-        for (i = 0; environ[i] != NULL; i++)
-        {
-            printf("%s\n", environ[i]);
-        }
-        return (0);
-    }
-    return (-1);
+size_t i;
+if (strcmp(term.argv[0], "env") == 0)
+{
+for (i = 0; environ[i] != NULL; i++)
+{
+printf("%s\n", environ[i]);
+}
+return (0);
+}
+return (-1);
 }
 
 /**
@@ -79,18 +79,18 @@ int _setenv(term_t term)
  */
 char *_getenv(const char *name)
 {
-    size_t i;
-    if (name != NULL)
-    {
-        for (i = 0; environ[i] != NULL; i++)
-        {
-            if (strncmp(environ[i], name, strlen(name)) == 0)
-            {
-                return (environ[i] + strlen(name) + 1);
-            }
-        }
-    }
-    return (NULL);
+size_t i;
+if (name != NULL)
+{
+for (i = 0; environ[i] != NULL; i++)
+{
+if (strncmp(environ[i], name, strlen(name)) == 0)
+{
+return (environ[i] + strlen(name) + 1);
+}
+}
+}
+return (NULL);
 }
 
 /**
