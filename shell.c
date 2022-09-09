@@ -17,7 +17,7 @@ if (hub == 0)
 {
 printf("$ ");
 }
-    
+
 while (getline(&term.line, &n, stdin) != EOF)
 {
 term.cmd_lines = cmd_args(term.line, ";");
