@@ -23,6 +23,7 @@ char **argv;
 char **envp;
 char *cmd;
 char *line;
+char **cmd_lines;
 int status;
 } term_t;
 
@@ -32,6 +33,7 @@ char **cmd_args(char *arg, const char *delim);
 char **__realloc(char **args, size_t n);
 int cmd_sys(term_t term);
 int cmd_run (term_t term);
+char **cmd_line_args(char *line);
 
 char *search_path(void);
 char *search_cmd_path(term_t term);
