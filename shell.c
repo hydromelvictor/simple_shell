@@ -27,7 +27,7 @@ term.argv = cmd_args(term.cmd_lines[i], " \t\r\n\a");
 if (cmd_sys(term) == 400)
 {
 free(term.line);
-free(term.cmd_lines);
+
 free(term.envp);
 free(term.argv);
 free(term.cmd);
