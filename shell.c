@@ -21,6 +21,11 @@ int main(void)
             term.argv = cmd_args(term.cmd_lines[i], " \t\r\n\a");
             if (cmd_sys(term) == 400)
             {
+                free(term.line);
+                free(term.envp);
+                free(term.cmd_lines);
+                free(term.argv);
+                free(term.cmd);
                 exit(term.status);
             }
             free(term.argv);
@@ -33,6 +38,9 @@ int main(void)
         free(term.cmd_lines);
     }
     free(term.line);
+    free(term.cmd_lines);
+    free(term.argv);
+    free(term.cmd);
     free(term.envp);
     exit(term.status);
 }
