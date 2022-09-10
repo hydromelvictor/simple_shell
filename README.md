@@ -38,3 +38,4 @@ This project was built and development with:
 - `GCC:` GNU Compiler version 4.8.4
 
 # Authors
+- Victor Dolédji - Development and documentation
