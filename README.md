@@ -27,3 +27,7 @@ built_ins.c | Handle all built-ins, handle changing directory and finding path |
  cmd_args.c | function to count delims of string |
 | cmd_runs.c | Executes programs, verify the locations and handles all functions |
 | cmd_sys.c | handle command call system execute |
+
+
+### Built with
+This project was built and development with:
