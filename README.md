@@ -34,3 +34,5 @@ This project was built and development with:
 - `C programming language:` is a general-purpose, procedural computer programming language supporting structured programming, lexical variable scope, and recursion, while a static type system prevents unintended operations.
 - `Ubuntu 14.04 LTS:` Operating system tester and working.
 - `Ubuntu 14.04 LTS: ` Betty linter, a simple alx command to checks the indentation of code.
+
+- `GCC:` GNU Compiler version 4.8.4
