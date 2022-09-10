@@ -39,3 +39,4 @@ This project was built and development with:
 
 # Authors
 - Victor Dolédji - Development and documentation
+- Samadou Ouro-agorouko - Development and documentation
