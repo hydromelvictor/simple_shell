@@ -36,3 +36,5 @@ This project was built and development with:
 - `Ubuntu 14.04 LTS: ` Betty linter, a simple alx command to checks the indentation of code.
 
 - `GCC:` GNU Compiler version 4.8.4
+
+# Authors
